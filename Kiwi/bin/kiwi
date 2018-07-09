@@ -1,0 +1,33 @@
+#!/usr/bin/env perl
+
+use 5.10.0;
+use strict;
+
+my ($action) = shift @ARGV;
+
+
+if($action eq 'generate' || $action eq 'g'){
+  my $type = shift @ARGV;
+  if($type eq 'migration'){
+    say "$action => $type";
+  }
+}
+
+if($action eq 'database' || $action eq 'db'){
+  my $type = shift @ARGV;
+  if($type eq 'setup'){
+    say "$action => $type";
+  }
+  if($type eq 'drop'){
+    say "$action => $type";
+  }
+  if($type eq 'drop-all'){
+    say "$action => $type";
+  }
+}
+
+
+
+__END__
+
+kiwi generate model User name:string email:string password:varchar(15) --namespace=App::Schema
